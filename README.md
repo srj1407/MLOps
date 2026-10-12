@@ -7,7 +7,8 @@ A simple Flask web application that predicts loan eligibility using a scikit-lea
 flask-loan-app/
 │
 ├── app.py              # Main Flask application & ML model training
-├── requirements.txt    # Python dependencies
+├── pyproject.toml      # Project metadata and dependencies
+├── uv.lock             # Locked dependency versions
 ├── Dockerfile          # Docker configuration
 ├── templates/
 │   └── index.html      # Frontend HTML form
@@ -18,7 +19,7 @@ flask-loan-app/
 
 1. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   uv sync
    ```
 
 2. Run the application:

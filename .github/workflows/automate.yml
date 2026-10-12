@@ -1,0 +1,36 @@
+# This workflow installs locked uv dependencies and runs tests.
+
+name: CI For loan app
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Give GitHub Actions access to the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up the minimum supported Python version from pyproject.toml
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Install uv and dependencies from pyproject.toml and uv.lock
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      # Run tests
+      - name: Test with pytest
+        run: uv run pytest
