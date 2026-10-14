@@ -2,7 +2,7 @@
     "family": "loan_app_task",
     "containerDefinitions": [
         {
-            "name": "Main",
+            "name": "flask_loan_app",
             "image": "967775677777.dkr.ecr.us-west-2.amazonaws.com/flask_loan_app:latest",
             "cpu": 0,
             "portMappings": [
