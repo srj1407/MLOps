@@ -83,6 +83,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: loan_app_service
+          service: loan-app-service
           cluster: loan_app_cluster
           wait-for-service-stability: true
