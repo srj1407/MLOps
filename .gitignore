@@ -38,6 +38,10 @@ instance/
 # Jupyter
 .ipynb_checkpoints/
 
+# MLflow local tracking data
+mlflow.db
+mlruns/
+
 # IDE and OS files
 .vscode/*
 !.vscode/settings.json
